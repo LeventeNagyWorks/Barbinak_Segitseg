@@ -1,0 +1,7 @@
+C:\Users\nagyl\Documents\GitHub\Barbinak_Segitseg\Kartyas\Kartyas\bin\Debug\Kartyas.exe.config
+C:\Users\nagyl\Documents\GitHub\Barbinak_Segitseg\Kartyas\Kartyas\bin\Debug\Kartyas.exe
+C:\Users\nagyl\Documents\GitHub\Barbinak_Segitseg\Kartyas\Kartyas\bin\Debug\Kartyas.pdb
+C:\Users\nagyl\Documents\GitHub\Barbinak_Segitseg\Kartyas\Kartyas\obj\Debug\Kartyas.csproj.AssemblyReference.cache
+C:\Users\nagyl\Documents\GitHub\Barbinak_Segitseg\Kartyas\Kartyas\obj\Debug\Kartyas.csproj.CoreCompileInputs.cache
+C:\Users\nagyl\Documents\GitHub\Barbinak_Segitseg\Kartyas\Kartyas\obj\Debug\Kartyas.exe
+C:\Users\nagyl\Documents\GitHub\Barbinak_Segitseg\Kartyas\Kartyas\obj\Debug\Kartyas.pdb
