@@ -1,0 +1,7 @@
+C:\Users\nagyl\Documents\GitHub\Barbinak_Segitseg\Tombok_TicTacToe\Tombok_TicTacToe\bin\Debug\Tombok_TicTacToe.exe.config
+C:\Users\nagyl\Documents\GitHub\Barbinak_Segitseg\Tombok_TicTacToe\Tombok_TicTacToe\bin\Debug\Tombok_TicTacToe.exe
+C:\Users\nagyl\Documents\GitHub\Barbinak_Segitseg\Tombok_TicTacToe\Tombok_TicTacToe\bin\Debug\Tombok_TicTacToe.pdb
+C:\Users\nagyl\Documents\GitHub\Barbinak_Segitseg\Tombok_TicTacToe\Tombok_TicTacToe\obj\Debug\Tombok_TicTacToe.csproj.AssemblyReference.cache
+C:\Users\nagyl\Documents\GitHub\Barbinak_Segitseg\Tombok_TicTacToe\Tombok_TicTacToe\obj\Debug\Tombok_TicTacToe.csproj.CoreCompileInputs.cache
+C:\Users\nagyl\Documents\GitHub\Barbinak_Segitseg\Tombok_TicTacToe\Tombok_TicTacToe\obj\Debug\Tombok_TicTacToe.exe
+C:\Users\nagyl\Documents\GitHub\Barbinak_Segitseg\Tombok_TicTacToe\Tombok_TicTacToe\obj\Debug\Tombok_TicTacToe.pdb
