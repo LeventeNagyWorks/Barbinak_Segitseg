@@ -1,0 +1,7 @@
+C:\Users\nagyl\Documents\GitHub\Barbinak_Segitseg\Domino\Domino\bin\Debug\Domino.exe.config
+C:\Users\nagyl\Documents\GitHub\Barbinak_Segitseg\Domino\Domino\bin\Debug\Domino.exe
+C:\Users\nagyl\Documents\GitHub\Barbinak_Segitseg\Domino\Domino\bin\Debug\Domino.pdb
+C:\Users\nagyl\Documents\GitHub\Barbinak_Segitseg\Domino\Domino\obj\Debug\Domino.csproj.AssemblyReference.cache
+C:\Users\nagyl\Documents\GitHub\Barbinak_Segitseg\Domino\Domino\obj\Debug\Domino.csproj.CoreCompileInputs.cache
+C:\Users\nagyl\Documents\GitHub\Barbinak_Segitseg\Domino\Domino\obj\Debug\Domino.exe
+C:\Users\nagyl\Documents\GitHub\Barbinak_Segitseg\Domino\Domino\obj\Debug\Domino.pdb
