@@ -4,8 +4,12 @@ namespace Tombok
 {
     internal class Program
     {
+        const int TOMBHOSSZ = 3;
+        public static bool nyert = false;
+
         static void Kiiras(int[,] tabla)
         {
+            Console.WriteLine();
             for (int i = 0; i < tabla.GetLength(0); i++)
             {
                 for (int j = 0; j < tabla.GetLength(1); j++)
@@ -18,8 +22,7 @@ namespace Tombok
 
         static bool Nyert(int[,] tabla, int jatekos)
         {
-            // Nyerés ellenőrzése sorokban, oszlopokban, átlókban
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < TOMBHOSSZ; i++)
             {
                 if (tabla[i, 0] == jatekos && tabla[i, 1] == jatekos && tabla[i, 2] == jatekos)
                     return true;
@@ -37,33 +40,78 @@ namespace Tombok
             return false;
         }
 
-        static void Lepes(int[,] tabla, int sor, int oszlop, int jatekos)
+        static void Lepes(int[,] tabla, int sor, int oszlop, int jatekosSzam, string jatekosNev)
         {
-            tabla[sor, oszlop] = jatekos;
+            if (tabla[sor, oszlop] == 0)
+            {
+                tabla[sor, oszlop] = jatekosSzam;
+            }
+            else
+            {
+                Console.WriteLine("\n*****A hely már foglalt. Próbálkozz újra!*****");
+                Kiiras(tabla);
+                LepesBeker(jatekosNev, out sor, out oszlop);
+                Lepes(tabla, sor, oszlop, jatekosSzam, jatekosNev);
+            }
         }
 
-        static void Main(string[] args)
+        private static bool MaradtEHely(int[,] ticTacToeTabla)
         {
             bool vanHely = false;
+            for (int i = 0; i < TOMBHOSSZ; i++)
+            {
+                for (int j = 0; j < TOMBHOSSZ; j++)
+                {
+                    if (ticTacToeTabla[i, j] == 0)
+                    {
+                        vanHely = true;
+                        break;
+                    }
+                }
+                if (vanHely)
+                {
+                    break;
+                }
+            }
 
-            int[,] ticTacToeTabla = new int[3, 3]; // Tic-Tac-Toe tábla
-            string[] jatekos = new string[2]; // Két játékos neve
+            return vanHely;
+        }
 
+        private static void LepesBeker(string jatekos, out int sor, out int oszlop)
+        {
+            Console.WriteLine();
+            Console.WriteLine($"Játékos {jatekos} lépése (sor oszlop): ");
+            sor = Convert.ToInt32(Console.ReadLine()) - 1;
+            oszlop = Convert.ToInt32(Console.ReadLine()) - 1;
+        }
+
+        private static void JatekosokBeker(string[] jatekos)
+        {
             Console.WriteLine("Első játékos neve:");
             jatekos[0] = Console.ReadLine();
 
             Console.WriteLine("Második játékos neve:");
             jatekos[1] = Console.ReadLine();
 
-            while (true)
+            Console.WriteLine("");
+        }
+
+        static void Main(string[] args)
+        {
+            bool vanHely = true;
+            int[,] ticTacToeTabla = new int[TOMBHOSSZ, TOMBHOSSZ];
+            string[] jatekos = new string[2];
+
+            JatekosokBeker(jatekos);
+
+            while (!nyert && vanHely)
             {
-                Kiiras(ticTacToeTabla); // Tábla kiírása
+                Kiiras(ticTacToeTabla);
 
-                Console.WriteLine($"Játékos {jatekos[0]} lépése (sor oszlop): ");
-                int sor = Convert.ToInt32(Console.ReadLine())-1;
-                int oszlop = Convert.ToInt32(Console.ReadLine())-1;
+                int sor, oszlop;
+                LepesBeker(jatekos[0], out sor, out oszlop);
 
-                Lepes(ticTacToeTabla, sor, oszlop, 1); // Játékos 1 lépése
+                Lepes(ticTacToeTabla, sor, oszlop, 1, jatekos[0]);
 
                 if (Nyert(ticTacToeTabla, 1))
                 {
@@ -71,20 +119,7 @@ namespace Tombok
                     break;
                 }
 
-                //van-e hely?
-                for (int i = 0; i < 3; i++)
-                {
-                    for (int j = 0; j < 3; j++)
-                    {
-                        if (ticTacToeTabla[i, j] == 0)
-                        {
-                            vanHely = true;
-                            break;
-                        }
-                    }
-                    if (vanHely)
-                        break;
-                }
+                vanHely = MaradtEHely(ticTacToeTabla);
 
                 if (!vanHely)
                 {
@@ -92,14 +127,11 @@ namespace Tombok
                     break;
                 }
 
-                // Második játékos következik
-                Kiiras(ticTacToeTabla); // Tábla kiírása
+                Kiiras(ticTacToeTabla);
 
-                Console.WriteLine($"Játékos {jatekos[1]} lépése (sor oszlop): ");
-                sor = Convert.ToInt32(Console.ReadLine()) - 1;
-                oszlop = Convert.ToInt32(Console.ReadLine()) - 1;
+                LepesBeker(jatekos[1], out sor, out oszlop);
 
-                Lepes(ticTacToeTabla, sor, oszlop, 2); // Játékos 2 lépése
+                Lepes(ticTacToeTabla, sor, oszlop, 2, jatekos[1]);
 
                 if (Nyert(ticTacToeTabla, 2))
                 {
@@ -110,4 +142,3 @@ namespace Tombok
         }
     }
 }
-
